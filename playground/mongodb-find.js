@@ -29,6 +29,7 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
     console.log(JSON.stringify(docs, undefined, 2));
   }, (error) => {
     console.log('Unable to fetch todos', error);
+    console.log('test');
   });
 
   // client.close();
