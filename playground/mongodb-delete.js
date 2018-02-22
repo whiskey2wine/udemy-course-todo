@@ -1,5 +1,5 @@
+// @flow
 const { MongoClient, ObjectID } = require('mongodb');
-
 
 MongoClient.connect('mongodb://localhost:27017', (err, client) => {
   if (err) {
@@ -25,13 +25,14 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
 
   // db.collection('Users').deleteMany({ name: 'Bacon' });
 
-  db.collection('Users').findOneAndDelete({
-    _id: new ObjectID('5a8e629f420c7a29a8273aec'),
-  })
+  db
+    .collection('Users')
+    .findOneAndDelete({
+      _id: new ObjectID('5a8e629f420c7a29a8273aec'),
+    })
     .then((result) => {
       console.log(JSON.stringify(result, undefined, 2));
     });
 
   // client.close();
 });
-
