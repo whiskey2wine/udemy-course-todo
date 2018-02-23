@@ -7,22 +7,46 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
   console.log('Connected to MongoDB server.');
   const db = client.db('TodoApp');
 
+  // db
+  //   .collection('Todos')
+  //   .findOneAndUpdate(
+  //     {
+  //       _id: new ObjectID('5a8f8e13f3e4a0496084c01b'),
+  //     },
+  //     {
+  //       $set: {
+  //         completed: true,
+  //       },
+  //     },
+  //     {
+  //       returnOriginal: false,
+  //     },
+  //   )
+  //   .then((result) => {
+  //     console.log(result);
+  //   });
+
   db
-    .collection('Todos')
+    .collection('Users')
     .findOneAndUpdate(
       {
-        _id: new ObjectID('5a8e5f85420c7a29a8273ae9'),
+        _id: new ObjectID('5a8f8ce8f3e4a0496084c019'),
       },
       {
         $set: {
-          completed: true,
+          name: 'Babe',
+        },
+        $inc: {
+          age: 1,
         },
       },
       {
         returnOriginal: false,
       },
     )
-    .then();
+    .then((result) => {
+      console.log(result);
+    });
 
   // client.close();
 });
