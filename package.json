@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "jest",
-    "test-watch": "jest --watch",
-    "test-watchAll": "jest --watchAll",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && jest",
+    "test-watch": "export NODE_ENV=test || SET \"NODE_ENV=test\" && jest --watch",
+    "test-watchAll": "export NODE_ENV=test || SET \"NODE_ENV=test\" && jest --watchAll",
     "flow-start": "flow start",
     "flow-stop": "flow stop",
     "flow-status": "flow status",
@@ -45,5 +45,6 @@
   "jest": {
     "verbose": true
   },
-  "": "https://hackernoon.com/configure-eslint-prettier-and-flow-in-vs-code-for-react-development-c9d95db07213"
+  "":
+    "https://hackernoon.com/configure-eslint-prettier-and-flow-in-vs-code-for-react-development-c9d95db07213"
 }
