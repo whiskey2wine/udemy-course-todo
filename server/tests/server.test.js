@@ -3,7 +3,7 @@ const request = require('supertest');
 const { app } = require('./../server');
 const { Todo } = require('./../model/todo');
 
-const todos = [
+const todosInit = [
   {
     text: 'First test todo',
   },
@@ -14,7 +14,7 @@ const todos = [
 
 beforeEach((done) => {
   Todo.remove({})
-    .then(() => Todo.insertMany(todos))
+    .then(() => Todo.insertMany(todosInit))
     .then(() => done());
 });
 
